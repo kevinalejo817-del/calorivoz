@@ -1,0 +1,4 @@
+project_id = "calorivoz"
+
+[functions.analyze-meal]
+verify_jwt = true

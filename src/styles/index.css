@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---- Estilos del diseño original de CaloriVoz ---- */
+body {
+  background-color: #F8FAFC;
+  color: #0F172A;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+h1, h2, h3, .font-display {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+}
+
+/* Ondas concéntricas del micrófono activo */
+@keyframes sonarWave {
+  0% { transform: scale(1); opacity: 0.65; }
+  100% { transform: scale(1.75); opacity: 0; }
+}
+.mic-wave-1 { animation: sonarWave 1.8s cubic-bezier(0.22, 1, 0.36, 1) infinite; }
+.mic-wave-2 { animation: sonarWave 1.8s cubic-bezier(0.22, 1, 0.36, 1) infinite; animation-delay: 0.6s; }
+
+/* Barras del ecualizador */
+@keyframes eqBar {
+  0%, 100% { height: 6px; }
+  50% { height: 20px; }
+}
+.eq-bar-1 { animation: eqBar 0.7s ease-in-out infinite; }
+.eq-bar-2 { animation: eqBar 0.7s ease-in-out infinite 0.15s; }
+.eq-bar-3 { animation: eqBar 0.7s ease-in-out infinite 0.3s; }
+.eq-bar-4 { animation: eqBar 0.7s ease-in-out infinite 0.45s; }
+
+/* Anillo SVG y barras de macros */
+.progress-ring-circle {
+  transition: stroke-dashoffset 0.75s cubic-bezier(0.22, 1, 0.36, 1), stroke 0.4s ease;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+.macro-bar-fill { transition: width 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+
+/* Entrada suave de tarjetas */
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-card-in { animation: fadeSlideUp 0.35s ease-out forwards; }
